@@ -82,6 +82,11 @@
         "symfony/polyfill-php56": "*"
     },
     "scripts": {
+        "prepare-system": [
+            "php bin/console d:d:d --if-exists -f --env=system",
+            "php bin/console d:d:c  --env=system",
+            "php bin/console d:s:u -f --env=system"
+        ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"

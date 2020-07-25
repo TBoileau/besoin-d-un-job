@@ -5,6 +5,7 @@ namespace App\UseCase;
 use App\Entity\Recruiter;
 use App\Gateway\RecruiterGateway;
 use Assert\Assert;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * Class RegisterRecruiter
@@ -18,12 +19,19 @@ class RegisterRecruiter
     private RecruiterGateway $recruiterGateway;
 
     /**
+     * @var UserPasswordEncoderInterface
+     */
+    private UserPasswordEncoderInterface $userPasswordEncoder;
+
+    /**
      * RegisterRecruiter constructor.
      * @param RecruiterGateway $recruiterGateway
+     * @param UserPasswordEncoderInterface $userPasswordEncoder
      */
-    public function __construct(RecruiterGateway $recruiterGateway)
+    public function __construct(RecruiterGateway $recruiterGateway, UserPasswordEncoderInterface $userPasswordEncoder)
     {
         $this->recruiterGateway = $recruiterGateway;
+        $this->userPasswordEncoder = $userPasswordEncoder;
     }
 
     /**
@@ -46,6 +54,10 @@ class RegisterRecruiter
                 ->email()
             ->verifyNow()
         ;
+
+        $recruiter->setPassword(
+            $this->userPasswordEncoder->encodePassword($recruiter, $recruiter->getPlainPassword())
+        );
 
         $this->recruiterGateway->register($recruiter);
 

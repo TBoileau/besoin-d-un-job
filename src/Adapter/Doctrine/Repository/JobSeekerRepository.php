@@ -4,7 +4,6 @@ namespace App\Adapter\Doctrine\Repository;
 
 use App\Entity\JobSeeker;
 use App\Gateway\JobSeekerGateway;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -13,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method JobSeeker[]    findAll()
  * @method JobSeeker[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class JobSeekerRepository extends ServiceEntityRepository implements JobSeekerGateway
+class JobSeekerRepository extends UserRepository implements JobSeekerGateway
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -22,6 +21,7 @@ class JobSeekerRepository extends ServiceEntityRepository implements JobSeekerGa
 
     public function register(JobSeeker $jobSeeker): void
     {
-        // TODO: Implement register() method.
+        $this->_em->persist($jobSeeker);
+        $this->_em->flush();
     }
 }

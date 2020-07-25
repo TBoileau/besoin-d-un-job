@@ -4,7 +4,6 @@ namespace App\Adapter\Doctrine\Repository;
 
 use App\Entity\Recruiter;
 use App\Gateway\RecruiterGateway;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -13,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Recruiter[]    findAll()
  * @method Recruiter[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RecruiterRepository extends ServiceEntityRepository implements RecruiterGateway
+class RecruiterRepository extends UserRepository implements RecruiterGateway
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -22,7 +21,7 @@ class RecruiterRepository extends ServiceEntityRepository implements RecruiterGa
 
     public function register(Recruiter $recruiter): void
     {
-        // TODO: Implement register() method.
+        $this->_em->persist($recruiter);
+        $this->_em->flush();
     }
-
 }

@@ -29,4 +29,5 @@ services:
 
     App\Gateway\JobSeekerGateway: '@App\Adapter\InMemory\Repository\JobSeekerRepository'
     App\Gateway\RecruiterGateway: '@App\Adapter\InMemory\Repository\RecruiterRepository'
+    App\Gateway\UserGateway: '@App\Adapter\InMemory\Repository\UserRepository'
 

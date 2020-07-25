@@ -1,7 +1,10 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        App\Entity\User:
+            algorithm: auto
     providers:
-        users_in_memory: { memory: null }
+        user_provider:
+            id: App\Security\Provider\UserProvider
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -9,7 +12,7 @@ security:
         main:
             anonymous: true
             lazy: true
-            provider: users_in_memory
+            provider: user_provider
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

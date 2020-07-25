@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Adapter\Doctrine\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Class User
@@ -13,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({"job_seeker" = "App\Entity\JobSeeker", "recruiter" = "App\Entity\Recruiter"})
  */
-abstract class User
+abstract class User implements UserInterface
 {
     /**
      * @var int|null
@@ -165,5 +166,27 @@ abstract class User
     public function getRegisteredAt(): \DateTimeInterface
     {
         return $this->registeredAt;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getSalt()
+    {
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getUsername()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function eraseCredentials()
+    {
     }
 }

@@ -1,6 +1,27 @@
 {
+    "behat/behat": {
+        "version": "v3.7.0"
+    },
+    "behat/gherkin": {
+        "version": "v4.6.2"
+    },
+    "behat/transliterator": {
+        "version": "v1.3.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.10.99"
+    },
+    "dama/doctrine-test-bundle": {
+        "version": "4.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "4.0",
+            "ref": "56eaa387b5e48ebcc7c95a893b47dfa1ad51449c"
+        },
+        "files": [
+            "./config/packages/test/dama_doctrine_test_bundle.yaml"
+        ]
     },
     "doctrine/annotations": {
         "version": "1.0",
@@ -139,6 +160,18 @@
         },
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
+        ]
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "0dc9cceda799fd3a08b96987e176a261028a3709"
+        },
+        "files": [
+            "./phpcs.xml.dist"
         ]
     },
     "symfony/asset": {

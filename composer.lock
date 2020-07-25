@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d77040c7c474664a8229fe49f5ba8e1d",
+    "content-hash": "6804529dac8c4fc4f7352c2fc954bc21",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -6344,6 +6344,247 @@
     ],
     "packages-dev": [
         {
+            "name": "behat/behat",
+            "version": "v3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Behat.git",
+                "reference": "08052f739619a9e9f62f457a67302f0715e6dd13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/08052f739619a9e9f62f457a67302f0715e6dd13",
+                "reference": "08052f739619a9e9f62f457a67302f0715e6dd13",
+                "shasum": ""
+            },
+            "require": {
+                "behat/gherkin": "^4.6.0",
+                "behat/transliterator": "^1.2",
+                "ext-mbstring": "*",
+                "php": ">=5.3.3",
+                "psr/container": "^1.0",
+                "symfony/config": "^2.7.51 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/console": "^2.7.51 || ^2.8.33 || ^3.3.15 || ^3.4.3 || ^4.0.3 || ^5.0",
+                "symfony/dependency-injection": "^2.7.51 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/event-dispatcher": "^2.7.51 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/translation": "^2.7.51 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/yaml": "^2.7.51 || ^3.0 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "container-interop/container-interop": "^1.2",
+                "herrera-io/box": "~1.6.1",
+                "phpunit/phpunit": "^4.8.36 || ^6.5.14 || ^7.5.20",
+                "symfony/process": "~2.5 || ^3.0 || ^4.0 || ^5.0"
+            },
+            "suggest": {
+                "ext-dom": "Needed to output test results in JUnit format."
+            },
+            "bin": [
+                "bin/behat"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Behat\\Behat\\": "src/Behat/Behat/",
+                    "Behat\\Testwork\\": "src/Behat/Testwork/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Scenario-oriented BDD framework for PHP 5.3",
+            "homepage": "http://behat.org/",
+            "keywords": [
+                "Agile",
+                "BDD",
+                "ScenarioBDD",
+                "Scrum",
+                "StoryBDD",
+                "User story",
+                "business",
+                "development",
+                "documentation",
+                "examples",
+                "symfony",
+                "testing"
+            ],
+            "time": "2020-06-03T13:08:44+00:00"
+        },
+        {
+            "name": "behat/gherkin",
+            "version": "v4.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Gherkin.git",
+                "reference": "51ac4500c4dc30cbaaabcd2f25694299df666a31"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/51ac4500c4dc30cbaaabcd2f25694299df666a31",
+                "reference": "51ac4500c4dc30cbaaabcd2f25694299df666a31",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5|~5",
+                "symfony/phpunit-bridge": "~2.7|~3|~4",
+                "symfony/yaml": "~2.3|~3|~4"
+            },
+            "suggest": {
+                "symfony/yaml": "If you want to parse features, represented in YAML files"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Gherkin": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Gherkin DSL parser for PHP 5.3",
+            "homepage": "http://behat.org/",
+            "keywords": [
+                "BDD",
+                "Behat",
+                "Cucumber",
+                "DSL",
+                "gherkin",
+                "parser"
+            ],
+            "time": "2020-03-17T14:03:26+00:00"
+        },
+        {
+            "name": "behat/transliterator",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc",
+                "reference": "3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "chuyskywalker/rolling-curl": "^3.1",
+                "php-yaoi/php-yaoi": "^1.0",
+                "phpunit/phpunit": "^4.8.36|^6.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Behat\\Transliterator\\": "src/Behat/Transliterator"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "time": "2020-01-14T16:39:13+00:00"
+        },
+        {
+            "name": "dama/doctrine-test-bundle",
+            "version": "v6.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmaicher/doctrine-test-bundle.git",
+                "reference": "06932e828b4e8ed8655b9b64ae30428e048b616e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmaicher/doctrine-test-bundle/zipball/06932e828b4e8ed8655b9b64ae30428e048b616e",
+                "reference": "06932e828b4e8ed8655b9b64ae30428e048b616e",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.9,>=2.9.3",
+                "doctrine/doctrine-bundle": "^1.11 || ^2.0",
+                "php": "^7.1",
+                "symfony/framework-bundle": "^3.4 || ^4.3 || ^5.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "symfony/phpunit-bridge": "^4.3 || ^5.0",
+                "symfony/yaml": "^3.4 || ^4.3 || ^5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DAMA\\DoctrineTestBundle\\": "src/DAMA/DoctrineTestBundle"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Maicher",
+                    "email": "mail@dmaicher.de"
+                }
+            ],
+            "description": "Symfony bundle to isolate doctrine database tests and improve test performance",
+            "keywords": [
+                "doctrine",
+                "isolation",
+                "performance",
+                "symfony",
+                "tests"
+            ],
+            "time": "2020-03-02T20:42:23+00:00"
+        },
+        {
             "name": "nikic/php-parser",
             "version": "v4.6.0",
             "source": {
@@ -6394,6 +6635,57 @@
                 "php"
             ],
             "time": "2020-07-02T17:12:47+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
+                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2020-04-17T01:09:41+00:00"
         },
         {
             "name": "symfony/browser-kit",

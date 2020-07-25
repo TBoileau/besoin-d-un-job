@@ -1,0 +1,57 @@
+default:
+  suites:
+    accept_application:
+      contexts:
+        - 'App\Features\AcceptApplicationContext'
+      paths:
+        - '%paths.base%/features/accept_application.feature'
+    close_application:
+      contexts:
+        - 'App\Features\CloseApplicationContext'
+      paths:
+        - '%paths.base%/features/close_application.feature'
+    delete_offer:
+      contexts:
+        - 'App\Features\DeleteOfferContext'
+      paths:
+        - '%paths.base%/features/delete_offer.feature'
+    hire:
+      contexts:
+        - 'App\Features\HireContext'
+      paths:
+        - '%paths.base%/features/hire.feature'
+    match:
+      contexts:
+        - 'App\Features\MatchContext'
+      paths:
+        - '%paths.base%/features/match.feature'
+    publish_offer:
+      contexts:
+        - 'App\Features\PublishOfferContext'
+      paths:
+        - '%paths.base%/features/publish_offer.feature'
+    refuse_application:
+      contexts:
+        - 'App\Features\RefuseApplicationContext'
+      paths:
+        - '%paths.base%/features/refuse_application.feature'
+    register:
+      contexts:
+        - 'App\Features\RegisterContext'
+      paths:
+        - '%paths.base%/features/register.feature'
+    send_application:
+      contexts:
+        - 'App\Features\SendApplicationContext'
+      paths:
+        - '%paths.base%/features/send_application.feature'
+    update_resume:
+      contexts:
+        - 'App\Features\UpdateResumeContext'
+      paths:
+        - '%paths.base%/features/update_resume.feature'
+    show_interest:
+      contexts:
+        - 'App\Features\ShowInterestContext'
+      paths:
+        - '%paths.base%/features/show_interest.feature'

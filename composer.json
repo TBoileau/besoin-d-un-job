@@ -40,6 +40,9 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "behat/behat": "^3.7",
+        "dama/doctrine-test-bundle": "^6.3",
+        "squizlabs/php_codesniffer": "^3.5",
         "symfony/browser-kit": "^5.1",
         "symfony/css-selector": "^5.1",
         "symfony/debug-bundle": "^5.1",
@@ -65,7 +68,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "App\\Tests\\": "tests/",
+            "App\\Features\\": "features/bootstrap"
         }
     },
     "replace": {

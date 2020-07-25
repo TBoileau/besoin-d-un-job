@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Adapter\Doctrine\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -14,7 +15,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({"job_seeker" = "App\Entity\JobSeeker", "recruiter" = "App\Entity\Recruiter"})
  */
-abstract class User implements UserInterface
+abstract class User implements UserInterface, \Serializable, EquatableInterface
 {
     /**
      * @var int|null
@@ -188,5 +189,29 @@ abstract class User implements UserInterface
      */
     public function eraseCredentials()
     {
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function serialize()
+    {
+        return serialize([$this->email]);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function unserialize($serialized)
+    {
+        list ($this->email) = unserialize($serialized, ['allowed_classes' => false]);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function isEqualTo(UserInterface $user)
+    {
+        return $user->getUsername() === $this->getUsername();
     }
 }

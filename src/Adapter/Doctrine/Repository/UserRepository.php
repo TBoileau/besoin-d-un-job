@@ -24,6 +24,6 @@ class UserRepository extends ServiceEntityRepository implements UserGateway
      */
     public function findByEmail(string $email): ?UserInterface
     {
-        // TODO: Implement findByEmail() method.
+        return parent::findOneBy(["email" => $email]);
     }
 }

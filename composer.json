@@ -47,10 +47,8 @@
         "symfony/css-selector": "^5.1",
         "symfony/debug-bundle": "^5.1",
         "symfony/maker-bundle": "^1.20",
-        "symfony/monolog-bundle": "^3.0",
         "symfony/phpunit-bridge": "^5.1",
         "symfony/stopwatch": "^5.1",
-        "symfony/twig-bundle": "^5.1",
         "symfony/var-dumper": "^5.1",
         "symfony/web-profiler-bundle": "^5.1"
     },
@@ -85,7 +83,8 @@
         "prepare-system": [
             "php bin/console d:d:d --if-exists -f --env=system",
             "php bin/console d:d:c  --env=system",
-            "php bin/console d:s:u -f --env=system"
+            "php bin/console d:s:u -f --env=system",
+            "php bin/console d:f:l -n --env=system"
         ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",

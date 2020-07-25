@@ -2,6 +2,7 @@
 
 namespace App\Features;
 
+use App\Adapter\InMemory\Repository\OfferRepository;
 use App\Entity\Offer;
 use App\UseCase\PublishOffer;
 use Assert\Assertion;
@@ -18,7 +19,7 @@ class PublishOfferContext implements Context
      */
     public function iWantToPublishAnOffer()
     {
-        $this->publishOffer = new PublishOffer();
+        $this->publishOffer = new PublishOffer(new OfferRepository());
     }
 
     /**
@@ -30,8 +31,8 @@ class PublishOfferContext implements Context
             ->setName("name")
             ->setCompanyDescription("company description")
             ->setJobDescription("job description")
-            ->setMaxSalary(32000)
-            ->setMinSalary(38000)
+            ->setMaxSalary(38000)
+            ->setMinSalary(32000)
             ->setMissions("missions")
             ->setProfile("profile")
             ->setRemote(true)

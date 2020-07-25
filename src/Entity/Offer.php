@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class Offer
  * @package App\Entity
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Gateway\OfferGateway")
  */
 class Offer
 {

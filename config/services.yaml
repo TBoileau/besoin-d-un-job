@@ -27,5 +27,6 @@ services:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    App\Gateway\JobSeekerGateway: '@App\Adapter\InMemory\Repository\JobSeekerRepository'
+    App\Gateway\RecruiterGateway: '@App\Adapter\InMemory\Repository\RecruiterRepository'
+

@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Adapter\Doctrine\Repository\RecruiterRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

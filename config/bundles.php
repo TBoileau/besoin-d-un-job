@@ -13,4 +13,5 @@ return [
     Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true, 'system' => true],
     DAMA\DoctrineTestBundle\DAMADoctrineTestBundle::class => ['system' => true],
+    Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['system' => true],
 ];

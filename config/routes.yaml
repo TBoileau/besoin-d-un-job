@@ -6,6 +6,10 @@ register_recruiter:
   path: /recruiter/register
   controller: App\Controller\RegisterRecruiterController
 
+publish_offer:
+  path: /publish-offer
+  controller: App\Controller\PublishOfferController
+
 index:
   path: /
   controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController

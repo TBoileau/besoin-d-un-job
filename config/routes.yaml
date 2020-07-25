@@ -10,6 +10,10 @@ publish_offer:
   path: /publish-offer
   controller: App\Controller\PublishOfferController
 
+show_interest:
+  path: /show-intrest/{offer}/{jobSeeker}
+  controller: App\Controller\ShowInterestController
+
 index:
   path: /
   controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController

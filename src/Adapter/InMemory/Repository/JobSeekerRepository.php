@@ -13,6 +13,13 @@ class JobSeekerRepository extends UserRepository implements JobSeekerGateway
 {
     public function register(JobSeeker $jobSeeker): void
     {
-        // TODO: Implement register() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function findOneById(int $id): JobSeeker
+    {
+        return $this->users[$id];
     }
 }

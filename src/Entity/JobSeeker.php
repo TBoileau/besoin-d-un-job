@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class JobSeeker
  * @package App\Entity
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Gateway\JobSeekerGateway")
  */
 class JobSeeker extends User
 {

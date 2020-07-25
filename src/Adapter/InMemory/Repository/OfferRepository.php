@@ -1,26 +1,53 @@
 <?php
 
-namespace App\Adapter\Doctrine\Repository;
+namespace App\Adapter\InMemory\Repository;
 
 use App\Entity\Offer;
-use App\Entity\Recruiter;
 use App\Gateway\OfferGateway;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * Class OfferRepository
- * @package App\Adapter\Doctrine\Repository
+ * @package App\Adapter\InMemory\Repository
  */
-class OfferRepository extends ServiceEntityRepository implements OfferGateway
+class OfferRepository implements OfferGateway
 {
     /**
-     * OfferRepository constructor.
-     * @param ManagerRegistry $registry
+     * @var Offer[]
      */
-    public function __construct(ManagerRegistry $registry)
+    public array $offers = [];
+
+    /**
+     * OfferRepository constructor.
+     */
+    public function __construct()
     {
-        parent::__construct($registry, Offer::class);
+        $offer = (new  Offer())
+            ->setName("name")
+            ->setCompanyDescription("company description")
+            ->setJobDescription("job description")
+            ->setMaxSalary(38000)
+            ->setMinSalary(32000)
+            ->setMissions("missions")
+            ->setProfile("profile")
+            ->setRemote(true)
+            ->setSoftSkills("soft skills")
+            ->setTasks("tasks")
+        ;
+
+        $reflectionClass = new \ReflectionClass($offer);
+        $reflectionProperty = $reflectionClass->getProperty("id");
+        $reflectionProperty->setAccessible(true);
+        $reflectionProperty->setValue($offer, 1);
+
+        $this->offers = [1 => $offer];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function findOneById(int $id): Offer
+    {
+        return $this->offers[$id];
     }
 
     /**
@@ -28,7 +55,5 @@ class OfferRepository extends ServiceEntityRepository implements OfferGateway
      */
     public function publish(Offer $offer): void
     {
-        $this->_em->persist($offer);
-        $this->_em->flush();
     }
 }

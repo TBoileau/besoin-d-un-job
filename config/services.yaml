@@ -31,4 +31,20 @@ services:
     App\Gateway\RecruiterGateway: '@App\Adapter\InMemory\Repository\RecruiterRepository'
     App\Gateway\UserGateway: '@App\Adapter\InMemory\Repository\UserRepository'
     App\Gateway\OfferGateway: '@App\Adapter\InMemory\Repository\OfferRepository'
+    App\Gateway\InterestGateway: '@App\Adapter\InMemory\Repository\InterestRepository'
 
+    app.gateway.job_seeker:
+        alias: 'App\Gateway\JobSeekerGateway'
+        public: true
+    app.gateway.recruiter:
+        alias: 'App\Gateway\RecruiterGateway'
+        public: true
+    app.gateway.user:
+        alias: 'App\Gateway\UserGateway'
+        public: true
+    app.gateway.offer:
+        alias: 'App\Gateway\OfferGateway'
+        public: true
+    app.gateway.interest:
+        alias: 'App\Gateway\InterestGateway'
+        public: true

@@ -3,6 +3,7 @@
 namespace App\Adapter\Doctrine\Repository;
 
 use App\Entity\JobSeeker;
+use App\Entity\Offer;
 use App\Gateway\JobSeekerGateway;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -23,5 +24,13 @@ class JobSeekerRepository extends UserRepository implements JobSeekerGateway
     {
         $this->_em->persist($jobSeeker);
         $this->_em->flush();
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function findOneById(int $id): JobSeeker
+    {
+        return parent::find(["id" => $id]);
     }
 }

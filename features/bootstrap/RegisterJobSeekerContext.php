@@ -50,7 +50,10 @@ class RegisterJobSeekerContext implements Context
             }
         };
 
-        $this->registerJobSeeker = new RegisterJobSeeker(new JobSeekerRepository($userPasswordEncoder));
+        $this->registerJobSeeker = new RegisterJobSeeker(
+            new JobSeekerRepository($userPasswordEncoder),
+            $userPasswordEncoder
+        );
     }
 
     /**

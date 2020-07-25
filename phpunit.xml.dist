@@ -17,13 +17,13 @@
 
     <testsuites>
         <testsuite name="unit">
-            <directory>tests</directory>
+            <directory>tests/Unit</directory>
         </testsuite>
         <testsuite name="integration">
-            <directory>tests</directory>
+            <directory>tests/Integration</directory>
         </testsuite>
         <testsuite name="system">
-            <directory>tests</directory>
+            <directory>tests/System</directory>
         </testsuite>
     </testsuites>
 

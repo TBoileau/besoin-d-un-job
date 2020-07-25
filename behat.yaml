@@ -35,11 +35,16 @@ default:
         - 'App\Features\RefuseApplicationContext'
       paths:
         - '%paths.base%/features/refuse_application.feature'
-    register:
+    register_recruiter:
       contexts:
-        - 'App\Features\RegisterContext'
+        - 'App\Features\RegisterRecruiterContext'
       paths:
-        - '%paths.base%/features/register.feature'
+        - '%paths.base%/features/register_recruiter.feature'
+    register_job_seeker:
+      contexts:
+        - 'App\Features\RegisterJobSeekerContext'
+      paths:
+        - '%paths.base%/features/register_job_seeker.feature'
     send_application:
       contexts:
         - 'App\Features\SendApplicationContext'
